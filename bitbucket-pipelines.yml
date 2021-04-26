@@ -1,0 +1,9 @@
+image: atlassian/default-image:2
+
+pipelines:
+  default:
+    - parallel:
+      - step:
+          name: 'Build and React App'
+          script:
+            - git push https://heroku:a657e9a6-6513-48d6-a555-c5cad59b7071@git.heroku.com/infinite-scroll-list.git HEAD
