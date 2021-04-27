@@ -9,4 +9,3 @@ pipelines:
             - git push https://heroku:a657e9a6-6513-48d6-a555-c5cad59b7071@git.heroku.com/infinite-scroll-list.git HEAD
             - npm install
             - npm run build
-            - npm run server
