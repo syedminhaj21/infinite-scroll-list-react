@@ -23,7 +23,7 @@ function useFetch(page) {
 
   useEffect(() => {
     loadUserInfo();
-  }, [page]);
+  }, [page, loadUserInfo]);
 
   return { loading, error, userList };
 }
