@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect, useCallback } from 'react';
-import { Button, Spinner, Container, Col, Navbar, Nav, Form, ListGroup, Toast, Modal } from 'react-bootstrap';
+import { Button, Spinner, Container, Navbar, Nav, Form, ListGroup, Modal } from 'react-bootstrap';
 import { useHistory } from 'react-router-dom';
 import useFetch from './FetchData';
 
@@ -33,7 +33,7 @@ function Home(props) {
         else {
             history.push('/login');
         }
-    }, [handleObserver]);
+    }, [handleObserver, history]);
 
     const logoutUser = () => {
         history.push({
@@ -94,24 +94,6 @@ function Home(props) {
             }
         </Container>
     );
-}
-
-function Toaster({ userSelected, show, toggle }) {
-    return (
-        <Toast show={show} onClose={() => toggle(!show)}>
-            <Toast.Header>
-                <img src={userSelected.picture.thumbnail} className="rounded mr-2" alt="" />
-                <strong className="mr-auto">{userSelected.name.title} {userSelected.name.first} {userSelected.name.last}</strong>
-                <small>Gender: {userSelected.gender}</small>
-            </Toast.Header>
-            <Toast.Body>
-                Address:<br></br>
-                Country: {userSelected.location.country}<br></br>
-                City: {userSelected.location.city}<br></br>
-                State: {userSelected.location.state}<br></br>
-            </Toast.Body>
-        </Toast>
-    )
 }
 
 function Popup({ userSelected, show, toggle, ...props }) {

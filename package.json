@@ -8,6 +8,7 @@
     "@testing-library/user-event": "^12.1.10",
     "axios": "^0.21.1",
     "bootstrap": "^4.6.0",
+    "core-js": "^3.11.0",
     "express": "^4.17.1",
     "react": "^17.0.2",
     "react-bootstrap": "^1.5.2",
@@ -41,7 +42,7 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }, 
+  },
   "engines": {
     "node": "10.15.2",
     "npm": "5.3.0"

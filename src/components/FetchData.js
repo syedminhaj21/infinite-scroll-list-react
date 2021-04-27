@@ -19,7 +19,7 @@ function useFetch(page) {
     } catch (err) {
       setError(err);
     }
-  }, [page]);
+  }, []);
 
   useEffect(() => {
     loadUserInfo();
