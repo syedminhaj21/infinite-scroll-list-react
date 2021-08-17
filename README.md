@@ -1,29 +1,19 @@
 # README #
 
-This README would normally document whatever steps are necessary to get your application up and running.
+### Infinite-scroll-list-react
+If you are looking for an alternative to pagination then you should consider infinite scroll. In modern UI/UX development infinite scroll provides a better user experience as the user does not have to move between screens, he can scroll endlessly to view the data being on the same page.
+This is a demonstration of infinite scroll implemented with **HTML Observer api** and React v17 using latest React techniques such as **Hooks** - **useEffect, useState, useRef** etc.
+*Please note - There is a mock login interface implemented with username as 'foo' and password as 'bar'.
 
-### What is this repository for? ###
+Live link: https://infinite-scroll-list.herokuapp.com/login 
 
-* Quick summary
-* Version
-* [Learn Markdown](https://bitbucket.org/tutorials/markdowndemo)
+### Setup
+git clone https://github.com/syedminhaj21/infinite-scroll-list-react.git
+**Dev**:
+1. npm install
+2. npm start
 
-### How do I get set up? ###
-
-* Summary of set up
-* Configuration
-* Dependencies
-* Database configuration
-* How to run tests
-* Deployment instructions
-
-### Contribution guidelines ###
-
-* Writing tests
-* Code review
-* Other guidelines
-
-### Who do I talk to? ###
-
-* Repo owner or admin
-* Other community or team contact
+**Prod**
+1. npm install
+2. npm run build
+3. npm run server
