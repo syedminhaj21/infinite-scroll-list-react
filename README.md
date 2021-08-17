@@ -9,6 +9,7 @@ Live link: https://infinite-scroll-list.herokuapp.com/login
 
 ### Setup
 git clone https://github.com/syedminhaj21/infinite-scroll-list-react.git
+
 **Dev**:
 1. npm install
 2. npm start
