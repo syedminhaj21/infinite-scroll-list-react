@@ -4,7 +4,6 @@ import {
   Route,
   Redirect
 } from 'react-router-dom';
-import Login from './components/Login';
 import Home from './components/Home';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -15,10 +14,9 @@ function App() {
       <Router>
         <Switch>
           <Route exact path='/'>
-            <Redirect to='/login' />
+            <Redirect to='/home' />
           </Route>
-          <Route path='/login' component={Login} />
-            <Route path='/home' component={Home} />
+          <Route path='/home' component={Home} />
         </Switch>
       </Router>
     </div>

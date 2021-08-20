@@ -19,7 +19,6 @@ function Home(props) {
     }, []);
 
     useEffect(() => {
-        if (history.location.state !== undefined && !history.location.state.invalidUser) {
             const option = {
                 root: null,
                 rootMargin: '20px',
@@ -29,19 +28,7 @@ function Home(props) {
             if (loader.current) {
                 observer.observe(loader.current);
             }
-        }
-        else {
-            history.push('/login');
-        }
     }, [handleObserver, history]);
-
-    const logoutUser = () => {
-        history.push({
-            pathname: '/login',
-            state: { invalidUser: true }
-        });
-
-    }
 
     const onListItemClick = (user) => {
         setUserSelected(user);
@@ -51,21 +38,17 @@ function Home(props) {
     return (
         <Container fluid className='home-page'>
             {
-                (history.location.state !== undefined && !history.location.state.invalidUser) ?
                     <div >
                         <Navbar bg="primary" variant="dark">
                             <Navbar.Brand>Infinite Responsive Scroll List</Navbar.Brand>
                             <Nav className="mr-auto">
                             </Nav>
                             <Form inline>
-                                <Button variant="outline-light" type='submit' onClick={logoutUser}>Logout</Button>
                             </Form>
                         </Navbar>
-                        {/* <div className='row'> */}
                         <div className='container' style={{ padding: '5px' }}>
                             {Object.keys(userSelected).length > 0 ? <Popup size="sm" userSelected={userSelected} show={show} toggle={setShow} /> : null}
                             <ListGroup>
-                                {/* style={idx % 2 === 0 ? {backgroundColor: '#007bff', color: 'white'} : {}} */}
                                 {userList && userList.map((user, idx) => (
                                     <ListGroup.Item key={idx} variant={idx % 2 === 0 ? 'primary' : ''} onClick={() => onListItemClick(user)}>
                                         <span style={idx % 2 === 0 ? { color: 'white' } : {}}>{user.name.title} {user.name.first} {user.name.last}</span>
@@ -80,7 +63,6 @@ function Home(props) {
                                 ))}
                             </ListGroup>
                         </div>
-                        {/* </div> */}
                         {loading &&
                             <Spinner animation="border" variant="primary" className="spinner">
                                 <span className='sr-only'>Loading...</span>
@@ -89,8 +71,6 @@ function Home(props) {
                         {error && <p>Error!</p>}
                         <div ref={loader} />
                     </div>
-                    :
-                    null
             }
         </Container>
     );
